@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/b51db65dc3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="header">
+    <div class="container">
+      <nav>
+        <img src="Images/logo.jpg" class="logo">
+        <ul id="sidemenu">
+          <li><a href="#header">Home</a></li>
+          <li> <a href="#about">About</a></li>
+          <li> <a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <i class="fas fa-times" onclick="closemenu()"></i>
+        </ul>
+        <i class="fas fa-bars" onclick="openmenu()"></i>
+      </nav>
+
+      <div class="header-text">
+        <h1>Hi, I'm <br><span>Man </span>Thakkar</h1>
+        <br>
+        <p>A Frontend Web-Developer</p>
+      </div>
+    </div>
+  </div>
+  <!---------about----------->
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="about-col-1">
+          <img src="Images/user.jpg" alt="">
+        </div>
+        <div class="about-col-2">
+          <h1 class="sub-title">About Me</h1>
+          <p>Hi! I'm a passionate Frontend Developer with a keen eye for design and a love for building responsive, user-friendly web interfaces. I specialize in turning ideas into interactive, accessible, and efficient websites using HTML, CSS, JavaScript, and modern frameworks like React. Whether it's crafting pixel-perfect layouts or optimizing performance, I enjoy every step of the creative coding process.<br><br>
+
+I'm always eager to learn new technologies, improve my skills, and collaborate on exciting projects. When I’m not coding, you’ll likely find me exploring design trends, solving UI/UX challenges, or geeking out over new tools that push the web forward.</p>
+
+<div class="tab-titles">
+  <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+  <p class="tab-links" onclick="opentab('Education')">Education</p>
+</div>
+<div class="tab-contents active-tab" id="skills">
+  <ul>
+    <li><span>Programming Languages</span><br>Java, C, Python</li>
+    <li><span>Web-development</span><br>HTML, CSS, JavaScript</li>
+    <li><span>Database Mangement</span><br>SQL</li>
+  </ul>
+</div>
+<div class="tab-contents" id="Education">
+  <ul>
+    <li><span>Bachelor of Engineering - Infornation technology</span><br>Gujrat Technological University<br>Year of Passing : 2026 <br>CGPA : 8.17</li>
+  </ul>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-------------Projects------------------->
+<div class="projects" id="projects">
+  <div class="container">
+    <h1 class="sub-title">My Projects</h1>
+    <div class="project-list">
+      <div>
+        <i class="fa-solid fa-code"></i>
+        <h2>Online Voting System</h2>
+        <P> "Designed and developed an online voting system using HTML, CSS, JavaScript, PHP, and phpMyAdmin to manage secure user authentication and vote storage. The platform enables real-time voting with a clean, responsive interface and efficient backend data handling."
+        </P>
+        <a href="#">Github link</Link></a>
+      </div>
+      <div>
+        <i class="fa-solid fa-laptop-code"></i>
+        <h2>Blood Donation Management System</h2>
+        <P> "Developed a Blood Donation Management System that streamlines donor registration, blood requests, and inventory tracking. The system provides dedicated portals for donors, hospitals, and admins to manage and access critical information efficiently."
+        </P>
+        <a href="#">Github Link</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!------Contact-------->
+<div class="contact" id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="contact-left"> 
+        <h1 class="sub-title">Contact-Me</h1>
+        <p><i class="fa-solid fa-paper-plane"></i> manthakkar2005@gmail.com</p>
+        <p><i class="fa-solid fa-phone"></i> +919327381425</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/share/1DaCcoYVtH/"><i class="fa-brands fa-facebook"></i></a>
+           <a href="https://www.instagram.com/manthakkar_3?igsh=MXVqdTdyNnhiOGNxYg=="><i class="fa-brands fa-instagram"></i></a> 
+           <a href="https://www.linkedin.com/in/man-thakkar-9b4b3326b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin"></i></a>
+           <a href="https://github.com/Man-Thakkar03"><i class="fa-brands fa-github"></i></i></a>
+        </div>
+        <a href="Images/Resume.pdf" class="btn">Download Resume</a>
+
+      </div>
+        <div class="contact-right">
+          <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+            <button type="submit" class="btn btn2">Submit</button>
+          </form>
+          <span id="msg"></span>
+        </div>
+
+     
+    </div>
+  </div>
+  <div class="copyright">
+    <p>Copyright © Man Thakkar. <i class="fa-solid fa-heart"></i></p>
+  </div>
+</div>
+
+
+
+ <script>
+  var tablinks = document.getElementsByClassName("tab-links");
+  var tabcontents = document.getElementsByClassName("tab-contents");
+  function opentab(tabname){
+    for(tablink of tablinks){
+      tablink.classList.remove("active-link");
+    }
+     for(tabcontent of tabcontents){
+      tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+  }
+ </script> 
+ <script>
+  var sidemenu = document.getElementById("sidemenu");
+
+  function openmenu(){
+    sidemenu.style.right = "0";
+  }
+
+  function closemenu(){
+    sidemenu.style.right = "-200px";
+  }
+ </script>
+ <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzayyAuTxUutiHXp3F_Q0KJkpJCxmU-Hv3eKgd9x7ItViLoBMEIq38_OI0nk0iyfxAPDA/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response =>{
+        msg.innerHTML="Message sent successfully"
+        setTimeout(function(){
+          msg.innerHTML=""
+        },3000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+</html>
